@@ -12,17 +12,21 @@
  */
 
 import React from 'react';
+import Header from 'components/Header'
+import Helmet from 'react-helmet';
 
 export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
-  static propTypes = {
-    children: React.PropTypes.node,
-  };
 
   render() {
     return (
       <div>
-        {React.Children.toArray(this.props.children)}
+      <Helmet
+        titleTemplate="%s - Jordan Cruz Blog"
+        defaultTitle="Blog"
+        meta={[
+        { name: 'None', content: 'Application Test' },  ]}/>
+        <Header />
       </div>
     );
   }
